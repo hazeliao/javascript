@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>JS Bin</title>
+  <script type="text/javascript">
+    function createTable(){
+      var b=document.getElementById("test");
+      var t=document.createElement("table");
+      t.border="1";
+      t.id="mytable";
+      var caption=t.createCaption();
+      caption.innerHTML="my table";
+      for(var i=0; i<5;i++){
+        var tr=t.insertRow(i);
+        for (var j=0;j<4;j++){
+          var td=tr.insertCell(j);
+         td.innerHTML="table"+i+j;
+        }
+       
+      }
+      b.appendChild(t);
+    }
+    
+    function deleteLastRow(){
+      var t=document.getElementById("mytable");
+      if(t.rows.length>0){
+        t.deleteRow(t.rows.length-1);
+      }
+    }
+    
+    function deleteLastCell(){
+      var t=document.getElementById("mytable");
+      var lastRow= t.rows[t.rows.length-1];
+      if(lastRow.cells.length>0){
+        
+        lastRow.deleteCell(lastRow.cells.length-1);
+      }
+    }
+  </script>
+</head>
+<body id="test">
+  <input type="button" value="create" onclick="createTable()"/>
+  <input type="button" value="deletelastrow" onclick="deleteLastRow()"/>
+  <input type="button" value="deletelastcell" onclick="deleteLastCell()"/>
+</body>
+</html>

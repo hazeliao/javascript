@@ -1,0 +1,66 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Infraction fine </title>
+
+<script type="text/javascript">
+	function tellInfractionFine() {
+		
+		// TODO
+      var drivingSpeed=document.getElementById("drivingSpeed").value;
+      var speedLimit=document.getElementById("speedLimit").value;
+      var excessSpeed=drivingSpeed-speedLimit;
+      if(excessSpeed>20){
+        document.getElementById("answer").innerHTML="Income-based unit fine."
+      }else if(excessSpeed>15){
+        if(speedLimit>=10&&speedLimit<=60){
+          document.getElementById("answer").innerHTML="Infraction fine is 115 euros."
+        } else if(speedLimit>=70&&speedLimit<=120){
+          document.getElementById("answer").innerHTML="Infraction fine is 100 euros."
+        }
+      }else if(excessSpeed>0&&excessSpeed<=15){
+        if(speedLimit>=10&&speedLimit<=60){
+          document.getElementById("answer").innerHTML="Infraction fine is 85 euros."
+        } else if(speedLimit>=70&&speedLimit<=120){
+          document.getElementById("answer").innerHTML="Infraction fine is 70 euros."
+        }
+      }else {
+        document.getElementById("answer").innerHTML="No speeding, no fine."
+      }
+	}
+</script>
+</head>
+<body>
+	<h3>Infraction fine </h3>
+
+	<form>
+		<p>
+			<label>Driving Speed: </label> <input type="text" name="drivingSpeed" id="drivingSpeed"
+				size="3">
+		</p>
+		<p>
+			<label>Speed limit: </label> <input type="text" name="speedLimit"
+				id="speedLimit" size="3">
+		</p>
+		<p>
+			<input type="button" value="Tell about the ticket" onClick="tellInfractionFine()">
+		</p>
+	</form>
+
+		<!-- This is the target where the JavaScript will write the answer -->
+	<div id="answer"></div>
+</body>
+</html>
+
+<!-- test example:
+drivingSpeed = 120, speedLimit = 120 -> No speeding, no fine
+drivingSpeed = 65, speedLimit = 60 -> Infraction fine is 85 euros.  
+drivingSpeed = 77, speedLimit = 60 -> Infraction fine is 115 euros.
+drivingSpeed = 105, speedLimit = 100 -> Infraction fine is 70 euros.  
+drivingSpeed = 117, speedLimit = 100 -> Infraction fine is 100 euros.
+drivingSpeed = 121, speedLimit = 100 -> Income-based unit fines.
+-->
+
+         

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>JS Bin</title>
+  <script type="text/javascript">
+    function show(){
+      console.log("hello");
+      alert("Click the test 2 button to remove this click listener");
+    }
+    window.onload=function(){
+		var test1=document.getElementById("test1");
+		var test2=document.getElementById("test2");
+        test1.addEventListener("click", show, false);
+		/*test2.onclick=function(){
+          test1.removeEventListener("click", show, false);
+        }*/
+        test2.addEventListener("click", function(){
+          test1.removeEventListener("click", show, false);
+        }, false);
+		
+    }
+  </script>
+</head>
+<body>
+   <input type="button" value="test1" id="test1" />
+   <button type="button" id="test2"><b>test2</b></button>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>JS Bin</title>
+  <script type="text/javascript">
+    function test1(){
+      alert("绑定html元素属性");
+    }  
+     function test2(){
+      alert("绑定DOM对象属性");
+    }  
+    
+  
+  </script>
+</head>
+<body>
+  <a href="http://www.iotek.com.cn" onclick = "return false">click me</a>
+  
+  <input type="button" value="test1" id="mytest1" onclick="test1()"/>
+  <button type="button" id="test2"><b>test2</b></button>
+  <script type="text/javascript">
+    document.getElementById("test2").onclick=test2;
+  </script>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Body Mass Index (BMI)</title>
+  <script type="text/javascript" src="script.js"></script>
+</head>
+<body>
+	<h3>Body Mass Index (BMI)</h3>
+
+	<form>
+		<p>
+			<label>Weight: </label> <input type="text" name="weight" id="weight"
+				size="3"> kg
+		</p>
+		<p>
+			<label>Height: </label> <input type="text" name="height" id="height"
+				size="3"> cm &nbsp;&nbsp;&nbsp;
+		</p>
+		<p>
+			<input type="button" value="Calculate BMI" onClick="calculateBMI()">
+		</p>
+	</form>
+
+	<div id="answer"></div>
+</body>
+</html>
+
+<!-- test example:
+weight = 89, height = 180-> bmi= 24.69 (Normal Weight)
+-->
